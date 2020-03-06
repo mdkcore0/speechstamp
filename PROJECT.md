@@ -9,3 +9,12 @@
     - Found [a repository containing speech recognition with openvino + python](https://github.com/meshaun9/openvino_speech_recognition), trying to understand the code
 
     This is challenging for me, as I never had worked on this level of speech recognition (google cloud text-to-speech API hides all the machine learning steps from you :p)
+
+- Mar 06, 2020
+    - Learning about [TensorFlow speech recognition](https://github.com/tensorflow/docs/blob/master/site/en/r1/tutorials/sequences/audio_recognition.md) and how to train data. This is crucial to be able to generate a model that fits on my showcase project needs, so I can convert it and use in OpenVINO.
+
+    - Found about [Pannous' speech recognition repository](https://github.com/pannous/tensorflow-speech-recognition), an effort on creating a good speech recognition using TensorFlow on Linux.
+
+    Realized I will not complete any code until the deadline :/
+
+    It could be easier for me if I had chosen something related to image processing or computer vision (one idea I had was to integrate openvino on a small robot I'm assembling, so I could detect my cats and/or my son around the house), but decided to try out something different to maximize what I've learned on the course ¯\\_(ツ)_/¯
