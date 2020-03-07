@@ -71,4 +71,4 @@
 
         **NOTE**: the above command was run on my [OpenVINO container](https://github.com/mdkcore0/dockerfiles/tree/master/openvino), after installing the [requirements](./requirements.txt). This step will be detailed later, and a proper docker container will be created as well.
 
-    - Next step is to integrante this Intermediate Representation on an application and develop the project showcase :)
+    - Next step is to integrate this Intermediate Representation on an application and develop the project showcase :)
