@@ -1,0 +1,4 @@
+setuptools
+networkx
+defusedxml
+tensorflow==1.15.2
