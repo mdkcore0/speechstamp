@@ -4,7 +4,8 @@ Speech recognition on top of OpenVINO
 ## Goals
 This showcase project aims at, given an audio file, extract words (speech
 recognition) and timestamp each word, sending them to a broker that will then
-serve the data to subscribers, using [OpenVINO](https://software.intel.com/en-us/openvino-toolkit) and [MQTT](https://mqtt.org/).
+serve the data to subscribers, using [OpenVINO](https://software.intel.com/en-us/openvino-toolkit)
+and [MQTT](https://mqtt.org/).
 
 As there are several steps in this pipeline, I am splitting the project on a
 few goals:
@@ -31,6 +32,25 @@ Extra goals to make the project complete:
 
 ### Diagram
 TBD PROJECT DIAGRAM
+
+# Requirements
+* OpenVINO 2020.1
+* python3
+* python libraries ([requirements.txt](requirements.txt)):
+    * networkx
+    * defusedxml
+    * tensorflow 1.15.2
+
+## How to
+- Install project requirements (OpenVINO + requirements.txt).
+- TBD
+
+### Docker
+A dockerfile is available and aims to ease the project run, as it already
+contains all requirements installed and ready-to-use.
+
+Please, refer to [docker readme file](docker/README.md) for further
+instructions.
 
 ## Motivation
 This project is intended to show what I've learned from the [Intel Edge AI
