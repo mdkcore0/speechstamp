@@ -72,3 +72,34 @@
         **NOTE**: the above command was run on my [OpenVINO container](https://github.com/mdkcore0/dockerfiles/tree/master/openvino), after installing the [requirements](./requirements.txt). This step will be detailed later, and a proper docker container will be created as well.
 
     - Next step is to integrate this Intermediate Representation on an application and develop the project showcase :)
+
+- Mar 08, 2020
+    - Implemented two scripts to help getting things done:
+        - **download_deepspeech_resources.sh**
+
+            Download the DeepSpeech models and audio samples (version 0.5.1, but it can be changed when running the script) and extract them on **/tmp**. The script also copy the audio samples to the current directory, under the *audio* folder.
+            Just run:
+            ```
+            $ ./download_deepspeech_resources.sh
+            ```
+            To change wich version of DeepSpeech to download, just run as the following:
+            ```
+            $ DEEPSPEECHVERSION=0.6.1 ./download_deepspeech_resources.sh
+            ```
+            **NOTE**: *v0.6.1* is not supported right now, only **v0.5.1**.
+        - **convert_deepspeech_models.sh**
+
+            Uses OpenVINO Model Optimizer to actually convert the model in the Intermediate Representation. The resulting IR files will be copied to the current directory, under the *model* folder.
+            ```
+            $ ./convert_deepspeech_models.sh
+            ```
+            Again, is possible to set wich DeepSpeech version to use:
+            ```
+            $ DEEPSPEECHVERSION=0.6.1 ./convert_deepspeech_models.sh
+            ```
+            This conversion is based on [this document](https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_DeepSpeech_From_Tensorflow.html), with a slight modification on the *--output* flag: *lstm_fused_cell/Gather* -> *lstm_fused_cell/GatherNd* and *lstm_fused_cell/Gather_1* -> *lstm_fused_cell/GatherNd_1*.
+
+    - Added a specialized dockerfile to this project. This includes OpenVINO 2020.1 and all requirements already installed (see [requirements.txt](requirements.txt)).
+    The container depends on my [OpenVINO docker image](https://github.com/mdkcore0/dockerfiles/tree/master/openvino), and all instructions are available on [docker/README.md](docker/README.md).
+
+    - The actual use of the model was not developed yet. As the project showcase submission deadline is today, I will finish writting the documentation and work on the implementation after the submission.
