@@ -42,8 +42,18 @@ TBD PROJECT DIAGRAM
     * tensorflow 1.15.2
 
 ## How to
-- Install project requirements (OpenVINO + requirements.txt).
-- TBD
+- Install project requirements (OpenVINO + requirements.txt, or run the available [docker image](#docker))
+- Run the **download_deepspeech_resources.sh** script
+    ```
+    $ ./download_deepspeech_resources.sh
+    ```
+This will download DeepSpeech models and audio samples (v0.5.1) and extract its contents on */tmp*. It will also copy the audio samples to the current directory, under the *audio* folder.
+
+- Run the **convert_deepspeech_models.sh** script
+    ```
+    $ ./convert_deepspeech_models.sh
+    ```
+This will convert the DeepSpeech models to the Intermediate Representation and copy the resulting bin and xml files to the current directory, under the *model* folder.
 
 ### Docker
 A dockerfile is available and aims to ease the project run, as it already

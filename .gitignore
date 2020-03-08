@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# DeepSpeech/IR resources
+audio/
+model/
