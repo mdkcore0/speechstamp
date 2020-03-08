@@ -42,4 +42,4 @@ Also, recently worked on an audio transcriptor using [Google Cloud
 Speech-to-Text API](https://cloud.google.com/speech-to-text).
 
 ## Project progress
-All progress will be documented on the [PROJECT.md](PROJECT.md) file.
+All progress is documented on the [PROGRESS.md](PROGRESS.md) file.
