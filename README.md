@@ -56,6 +56,8 @@ This is project showcase is far from complete. There is a lot to study, comprehe
 
 This project is not complete, but had a considerable progress towards its goals and it's being very interesting while learning new technologies.
 
+**NOTICE**: I will keep working on this project after submission on the [wip branch](https://github.com/mdkcore0/speechstamp/tree/wip), so I'm freezing the master branch until the project showcase evaluation is over. Use [this tag](https://github.com/mdkcore0/speechstamp/tree/submission) to access the project state on the moment of the submission.
+
 # Requirements
 * OpenVINO 2020.1
 * python3
