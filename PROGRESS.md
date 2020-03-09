@@ -103,3 +103,8 @@
     The container depends on my [OpenVINO docker image](https://github.com/mdkcore0/dockerfiles/tree/master/openvino), and all instructions are available on [docker/README.md](docker/README.md).
 
     - The actual use of the model was not developed yet. As the project showcase submission deadline is today, I will finish writting the documentation and work on the implementation after the submission.
+
+- Mar 09, 2020
+    - Fixed a typo on the **convert_deepspeech_models.sh** script (missing character on the *disable_nhwc_to_nchw* paramenter)
+
+    - Added documentation about what was done until now and preparing for submission! \o/
