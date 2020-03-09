@@ -14,7 +14,7 @@ WORKDIR=$PWD
         --input input_node,previous_state_h/read,previous_state_c/read \
         --input_shape [1,16,19,26],[1,2048],[1,2048] \
         --output raw_logits,lstm_fused_cell/GatherNd,lstm_fused_cell/GatherNd_1 \
-        --disable_nhwc_to_nch || \
+        --disable_nhwc_to_nchw || \
             { echo "Error while converting model to IR"; exit 1; }
 
     mkdir -p $WORKDIR/model && \
