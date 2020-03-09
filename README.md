@@ -31,7 +31,29 @@ Extra goals to make the project complete:
   subtitle format
 
 ### Diagram
-TBD PROJECT DIAGRAM
+This is a flowchart showing the goal of this project. The *word/timestamp* transition is a stream of data, happening each time a word is recognized.
+![](resources/flowchart.png)
+
+## What is done
+This is project showcase is far from complete. There is a lot to study, comprehend and develop. However, there were [progress on getting things done](#project-progress), with some highlights below:
+- Learning how speech recognition is done on OpenVINO
+- Looking for examples and similar projects (fun fact: the very first name of this project was SpeechVINO, but later found that there were already a [project with this name](https://github.com/Speech-VINO) :p)
+    - Some projects I've found interesting while researching:
+        - [OpenVINO Speech Recognition Demo for NeurIPS 2018](https://github.com/meshaun9/openvino_speech_recognition)
+        - [Tensorflow Speech Recognition](https://github.com/pannous/tensorflow-speech-recognition)
+- Remembered about the [DeepSpeech project](https://github.com/mozilla/DeepSpeech) being announced some time ago; looking on it's source code and examples
+    - I really found this interesting, and decided to try to convert their TensorFlow model in the Intermediate Representation
+- Created some helper scripts, one to download DeepSpeech models and audio samples, and other to convert the model
+    - This was already [done in an older version of the model](https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_DeepSpeech_From_Tensorflow.html), just adapted to a newer version (v0.3.0 -> v0.5.1)
+    - The script to convert uses Model Optimizer with the following parameters:
+        - *input_model*: the TensorFlow pre-trained model
+        - *freeze_placeholder_with_value*: replaces input lengths with another value ([16])
+        - *input*: input nodes names
+        - *input_shape*: the input shapes to be fed to the inputs that were defined previously
+        - *output*: the ouput operations of the model
+        - *disable_nhwc_to_nchw*: keep the data stored as "[batch, height, width, channels]" (default on TensorFlow, as it uses *Intel MKL* optimizations), instead of converting to "[batch, channels, height, width]", as NCHW is the optimal format for *NVIDIA cuDNN*.
+
+This project is not complete, but had a considerable progress towards its goals and it's being very interesting while learning new technologies.
 
 # Requirements
 * OpenVINO 2020.1
@@ -41,7 +63,7 @@ TBD PROJECT DIAGRAM
     * defusedxml
     * tensorflow 1.15.2
 
-## How to
+## How to run
 - Install project requirements (OpenVINO + requirements.txt, or run the available [docker image](#docker))
 - Run the **download_deepspeech_resources.sh** script
     ```
