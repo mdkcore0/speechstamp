@@ -32,6 +32,7 @@ Extra goals to make the project complete:
 
 ### Diagram
 This is a flowchart showing the goal of this project. The *word/timestamp* transition is a stream of data, happening each time a word is recognized.
+
 ![](resources/flowchart.png)
 
 ## What is done
